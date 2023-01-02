@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  web:
+    image: "my-app:latest"
+    mem_limit: 128m
+    environment:
+      Container: ELIXIR
+      HOST: "${HOST}"
+      PHX_HOST: "${PHX_HOST}"
+      PHX_PORT: "${PHX_PORT}"
+      PHX_SERVER: "${PHX_SERVER}"
+      RELEASE_NAME: "${RELEASE_NAME}"
+      MIX_ENV: "prod"
+      SECRET_KEY_BASE: "0oE9YBt2T7m8HoD3jIk1e6UlMSPjHiuF2EklY3Tikda8r81N5jU1jv9VNpVtChBh"
+      PORT: "${PORT}"
+    ports:
+      - "${PORT}:${PORT}"
+  nginx-proxy:
+    image: "nginx"
+    ports:
+      - "80:80"
+    volumes:
+      - "./proxy/conf.d:/etc/nginx/conf.d:ro"
+    mem_limit: 128m
+    links:
+      - "web"

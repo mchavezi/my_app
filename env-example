@@ -1,0 +1,8 @@
+export MIX_ENV="prod"
+export HOST="localhost"
+export PHX_HOST="localhost"
+export PHX_SERVER=true
+export PHX_PORT="8080"
+export PORT="8080"
+export RELEASE_NAME="latest"
+export SECRET_KEY_BASE="4OtKL7lQPW7LTXnBHFJ1KcOgkrV4dCOOCUnDsZ+foKrX5RFFrE+Udl+TCfpuNtVJ"
